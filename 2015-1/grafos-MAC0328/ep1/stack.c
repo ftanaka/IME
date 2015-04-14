@@ -47,7 +47,9 @@ void STACK_push ( stack *pilha, int u, int v ) {
 }
 
 arc *STACK_pop ( stack *pilha ) {
-   arc value = NULL;
+   arc *value;
+
+   value = NULL;
 
    if ( pilha == NULL )
       fprintf ( stderr, "ERROR: null pointer to stack: STACK_pop\n" );
