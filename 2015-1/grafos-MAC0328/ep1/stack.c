@@ -60,3 +60,14 @@ arc *STACK_pop ( stack *pilha ) {
 
    return value;
 }
+
+stack *STACK_end ( stack *pilha ) {
+   if ( pilha == NULL )
+      fprintf ( stderr, "ERROR: null pointer to stack: STACK_end\n" );
+   else {
+      if ( pilha->array != NULL )
+         free ( pilha->array );
+      free ( pilha );
+   }
+   return NULL;
+}
