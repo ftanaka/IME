@@ -31,3 +31,17 @@ stack *STACK_new ( int tamanho ) {
 
    return novo;
 }
+
+void STACK_push ( stack *pilha, int u, int v ) {
+   if ( pilha == NULL )
+      fprintf ( stderr, "ERROR: null pointer to stack: STACK_push\n" );
+   else if ( pilha->array == NULL )
+      fprintf ( stderr, "ERROR: null pointer to array: STACK_push\n" );
+   else if ( pilha->top == pilha->size )
+      fprintf ( stderr, "ERROR: stack is full: STACK_push\n" );
+   else {
+      pilha->array[pilha->top].u = u;
+      pilha->array[pilha->top].v = v;
+      pilha->top++;
+   }
+}
