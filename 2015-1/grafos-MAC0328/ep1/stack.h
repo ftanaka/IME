@@ -1,7 +1,13 @@
 typedef struct STACK {
+   int size;
+   int top;
+   arc *array;
+}arc;
+
+typedef struct ARC {
    int u;
    int v;
-}stack;
+}arc;
 
 stack *STACK_new ( int );
 
