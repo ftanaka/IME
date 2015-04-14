@@ -1,13 +1,17 @@
-typedef struct STACK {
+typedef struct STACK stack;
+
+typedef struct ARC arc;
+
+struct STACK {
    int size;
    int top;
    arc *array;
-}stack;
+};
 
-typedef struct ARC {
+struct ARC {
    int u;
    int v;
-}arc;
+};
 
 stack *STACK_new ( int );
 
