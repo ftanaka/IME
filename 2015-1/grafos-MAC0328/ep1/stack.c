@@ -71,3 +71,21 @@ stack *STACK_end ( stack *pilha ) {
    }
    return NULL;
 }
+
+void STACK_print ( stack *pilha ) {
+   int i;
+
+   if ( pilha == NULL )
+      fprintf ( stderr, "ERROR: null pointer to stack: STACK_print\n" );
+   else if ( pilha->array == NULL )
+      fprintf ( stderr, "ERROR: null pointer to array: STACK_print\n" );
+   else {
+      fprintf ( stdout, "STACK_print\n" );
+      fprintf ( stdout, "  stack->size = %d\n", pilha->size );
+      fprintf ( stdout, "  stack->top  = %d\n", pilha->top  );
+      fprintf ( stdout, "  BOTTOM ->" );
+      for ( i = 0; i < pilha->top; i++ )
+         fprintf (stdout, " ( %d, %d )", pilha->array[i].u, pilha->array[i].v);
+      fprintf ( stdout, " TOP\n" );
+   }
+}
