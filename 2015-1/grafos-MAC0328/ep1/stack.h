@@ -2,7 +2,7 @@ typedef struct STACK {
    int size;
    int top;
    arc *array;
-}arc;
+}stack;
 
 typedef struct ARC {
    int u;
