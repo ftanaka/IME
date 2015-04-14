@@ -45,3 +45,18 @@ void STACK_push ( stack *pilha, int u, int v ) {
       pilha->top++;
    }
 }
+
+arc *STACK_pop ( stack *pilha ) {
+   arc value = NULL;
+
+   if ( pilha == NULL )
+      fprintf ( stderr, "ERROR: null pointer to stack: STACK_pop\n" );
+   else if ( pilha->array == NULL )
+      fprintf ( stderr, "ERROR: null pointer to array: STACK_pop\n" );
+   else if ( pilha->top == 0 )
+      fprintf ( stderr, "ERROR: stack is empty: STACK_pop\n" );
+   else
+      value = &pilha->array[--pilha->top];
+
+   return value;
+}
