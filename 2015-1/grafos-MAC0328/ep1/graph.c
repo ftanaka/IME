@@ -61,3 +61,15 @@ arc *ARC_new ( int vertice ) {
 
    return novo;
 }
+
+graph *GRAPH_end ( graph *grafo ) {
+   if ( grafo == NULL )
+      fprintf ( stderr, "ERROR: null pointer to graph: GRAPH_end\n" );
+   else {
+      if ( grafo->array != NULL )
+         grafo->array = NODE_end ( grafo->array );
+      free ( grafo )
+      grafo = NULL;
+   }
+   return grafo;
+}
