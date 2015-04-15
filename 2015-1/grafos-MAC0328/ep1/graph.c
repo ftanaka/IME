@@ -142,9 +142,7 @@ graph *GRAPH_input ( void ) {
       fprintf ( stderr, "ERROR: invalid size value: GRAPH_input\n" );
    else {
       grafo = GRAPH_new ( tamanho );
-      if ( grafo == NULL )
-         return grafo;
-      else {
+      if ( grafo != NULL ) {
          for ( i = 0; i < tamanho; i++ ) {
             fscanf ( stdin, "%d", &grau );
             for ( j = 0; j < grau; j++ ) {
