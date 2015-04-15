@@ -72,6 +72,7 @@ graph *GRAPH_end ( graph *grafo ) {
       free ( grafo );
       grafo = NULL;
    }
+
    return grafo;
 }
 
@@ -117,16 +118,17 @@ void ARC_add ( graph *grafo, int u, int v ) {
       fprintf ( stderr, "ERROR: invalid v-vertex: ARC_add\n" );
    else {
       novo = ARC_new ( v );
-      if ( novo == NULL ) return;
-      if ( grafo->array[u].list == NULL )
-         grafo->array[u].list = novo;
-      else {
-         for ( ptr = grafo->array[u].list; ptr != NULL && ptr->next != NULL;
-               ptr = ptr->next);
-         ptr->next = novo;
+      if ( novo != NULL ) {
+         if ( grafo->array[u].list == NULL )
+            grafo->array[u].list = novo;
+         else {
+            for ( ptr = grafo->array[u].list; ptr != NULL && ptr->next != NULL;
+                  ptr = ptr->next);
+            ptr->next = novo;
+         }
+         grafo->E++;
+         grafo->array[u].degree++;
       }
-      grafo->E++;
-      grafo->array[u].degree++;
    }
 }
 
