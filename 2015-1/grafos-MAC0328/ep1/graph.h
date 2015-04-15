@@ -4,6 +4,24 @@ typedef struct NODE node;
 
 typedef struct ARC arc;
 
+struct GRAPH {
+   int V;
+   int E;
+   node *array;
+};
+
+struct NODE {
+   int vertex;
+   int degree;
+   arc *list;
+};
+
+struct ARC {
+   int vertex;
+   int block;
+   arc *next;
+};
+
 graph *GRAPH_new ( int );
 
 node *NODE_new ( int );
