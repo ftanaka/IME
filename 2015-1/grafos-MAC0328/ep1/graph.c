@@ -75,6 +75,8 @@ graph *GRAPH_end ( graph *grafo ) {
 }
 
 node *NODE_end ( node *vetor, int tamanho ) {
+   int i;
+
    if ( vetor == NULL )
       fprintf ( stderr, "ERROR: null pointer to array: NODE_end\n" );
    else {
@@ -84,5 +86,17 @@ node *NODE_end ( node *vetor, int tamanho ) {
       free ( vetor );
       vetor = NULL;
    }
+
    return vetor;
+}
+
+arc *ARC_end ( arc *arco ) {
+   arc *ptr;
+
+   if ( arco != NULL ) {
+      ptr = arco->next;
+      free ( arco );
+      return ARC_end ( ptr );
+   } else
+      return arco;
 }
