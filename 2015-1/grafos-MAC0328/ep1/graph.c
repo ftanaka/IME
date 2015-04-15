@@ -47,3 +47,17 @@ node *NODE_new ( int tamanho ) {
 
    return novo;
 }
+
+arc *ARC_new ( int vertice ) {
+   arc *novo;
+
+   novo = malloc ( sizeof ( arc ) );
+   if ( novo == NULL )
+      fprintf ( stderr, "ERROR: malloc failed: ARC_new\n" );
+   else {
+      novo->vertex = vertice;
+      novo->block  = -1;
+   }
+
+   return novo;
+}
