@@ -9,7 +9,7 @@ graph *GRAPH_new ( int tamanho ) {
    novo = NULL;
 
    if ( tamanho <= 0 )
-      fprintf ( stderr, "ERROR: invalid size value: GRAPH_new\n" ):
+      fprintf ( stderr, "ERROR: invalid size value: GRAPH_new\n" );
    else {
       novo = malloc ( sizeof ( graph ) );
       if ( novo == NULL )
@@ -28,6 +28,7 @@ graph *GRAPH_new ( int tamanho ) {
 
 node *NODE_new ( int tamanho ) {
    node *novo;
+   int i;
 
    novo = NULL;
 
@@ -68,7 +69,7 @@ graph *GRAPH_end ( graph *grafo ) {
    else {
       if ( grafo->array != NULL )
          grafo->array = NODE_end ( grafo->array, grafo->V );
-      free ( grafo )
+      free ( grafo );
       grafo = NULL;
    }
    return grafo;
