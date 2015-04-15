@@ -27,3 +27,9 @@ graph *GRAPH_new ( int );
 node *NODE_new ( int );
 
 arc *ARC_new ( int );
+
+graph *GRAPH_end ( graph * );
+
+node *NODE_end ( node * );
+
+arc *ARC_end ( arc * );
