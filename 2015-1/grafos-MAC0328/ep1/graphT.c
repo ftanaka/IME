@@ -10,6 +10,8 @@ int main ( void ) {
    grafo = NULL;
    arco  = NULL;
 
+   grafo = GRAPH_input ();
+   GRAPH_print ( grafo );
 
    return 0;
 }
