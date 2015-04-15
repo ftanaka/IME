@@ -37,3 +37,5 @@ arc *ARC_end ( arc * );
 void ARC_add ( graph *, int, int );
 
 graph *GRAPH_input ( void );
+
+void GRAPH_print ( graph * );
