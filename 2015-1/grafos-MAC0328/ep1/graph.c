@@ -129,10 +129,10 @@ void ARC_add ( graph *grafo, int u, int v ) {
 }
 
 graph *GRAPH_input ( void ) {
-   int tamanho, grau, v, flag;
+   int tamanho, grau, v, flag, i, j;
    graph *grafo;
 
-   tamanho = grau = v = flag = 0;
+   tamanho = grau = v = flag = i = j = 0;
    grafo = NULL;
 
    fscanf ( stdin, "%d", &tamanho );
