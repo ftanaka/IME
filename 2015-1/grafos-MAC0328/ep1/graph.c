@@ -18,6 +18,8 @@ graph *GRAPH_new ( int tamanho ) {
          novo->V = tamanho;
          novo->E = 0;
          novo->array = NODE_new ( tamanho );
+         if ( novo->array == NULL )
+            novo = GRAPH_end ( novo );
       }
    }
 
