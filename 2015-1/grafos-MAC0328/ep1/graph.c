@@ -128,3 +128,37 @@ void ARC_add ( graph *grafo, int u, int v ) {
    }
 }
 
+graph *GRAPH_input ( void ) {
+   int tamanho, grau, v, flag;
+   graph *grafo;
+
+   tamanho = grau = v = flag = 0;
+   grafo = NULL;
+
+   fscanf ( stdin, "%d", &tamanho );
+   if ( tamanho <= 0 )
+      fprintf ( stderr, "ERROR: invalid size value: GRAPH_input\n" );
+   else {
+      grafo = GRAPH_new ( tamanho );
+      if ( grafo == NULL )
+         return grafo;
+      else {
+         for ( i = 0; i < tamanho; i++ ) {
+            fscanf ( stdin, "%d", &grau );
+            for ( j = 0; j < grau; j++ ) {
+               fscanf ( stdin, "%d", &v );
+               if ( v < 0 && v >= tamanho ) {
+                  fprintf ( stderr, "ERROR: invalid vertex: GRAPH_input\n" );
+                  flag = 1;
+               } else
+                  ARC_add ( grafo, i, v );
+            }
+         }
+      }
+   }
+
+   if ( flag == 1 )
+      grafo = GRAPH_end ( grafo );
+
+   return grafo;
+}
