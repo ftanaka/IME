@@ -105,7 +105,7 @@ arc *ARC_end ( arc *arco ) {
 void ARC_add ( graph *grafo, int u, int v ) {
    arc *novo, *ptr;
 
-   novo = ptr = NULL:
+   novo = ptr = NULL;
 
    if ( grafo == NULL )
       fprintf ( stderr, "ERROR: null pointer to graph: ARC_add\n" );
@@ -118,10 +118,10 @@ void ARC_add ( graph *grafo, int u, int v ) {
    else {
       novo = ARC_new ( v );
       if ( novo == NULL ) return;
-      if ( grafo->array[i].list == NULL )
-         grafo->array[i].list = novo;
+      if ( grafo->array[u].list == NULL )
+         grafo->array[u].list = novo;
       else {
-         for ( ptr = grafo->array[i].list; ptr != NULL && ptr->next != NULL;
+         for ( ptr = grafo->array[u].list; ptr != NULL && ptr->next != NULL;
                ptr = ptr->next);
          ptr->next = novo;
       }
