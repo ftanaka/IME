@@ -23,3 +23,25 @@ graph *GRAPH_new ( int tamanho ) {
 
    return novo;
 }
+
+node *NODE_new ( int tamanho ) {
+   node *novo;
+
+   novo = NULL;
+
+   if ( tamanho <= 0 )
+      fprintf ( stderr, "ERROR: invalid size value: NODE_new\n" );
+   else {
+      novo = malloc ( tamanho * sizeof ( node ) );
+      if ( novo == NULL )
+         fprintf ( stderr, "ERROR: malloc failed: NODE_new\n" );
+      else
+         for ( i = 0; i < tamanho; i++ ) {
+            novo[i].vertex = i;
+            novo[i].degree = 0;
+            novo[i].list   = NULL;
+         }
+   }
+
+   return novo;
+}
