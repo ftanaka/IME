@@ -171,7 +171,7 @@ void GRAPH_print ( graph *grafo ) {
    fprintf ( stdout, "  V = %d\n", grafo->V );
    fprintf ( stdout, "  E = %d\n", grafo->E );
    for ( i = 0; i < grafo->V; i++ ) {
-      fprintf ( stdout, "  %d", grafo->array[i].degree );
+      fprintf ( stdout, "    %d", grafo->array[i].degree );
       for ( ptr = grafo->array[i].list; ptr != NULL; ptr = ptr->next )
          fprintf ( stdout, " %d", ptr->vertex );
       fprintf ( stdout, "\n" );
