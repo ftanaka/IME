@@ -125,6 +125,8 @@ void ARC_add ( graph *grafo, int u, int v ) {
                ptr = ptr->next);
          ptr->next = novo;
       }
+      grafo->E++;
+      grafo->array[u].degree++;
    }
 }
 
