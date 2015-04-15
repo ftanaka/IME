@@ -3,9 +3,12 @@ CFLAGS = -Wall -pedantic -ansi -std=c99 -g
 
 all: compila testes
 
-compila: stack.o
+compila: stack.o graph.o
 
 stack.o: stack.c
+	$(CC) $(CFLAGS) -c $^
+
+graph.o: graph.c
 	$(CC) $(CFLAGS) -c $^
 
 testes:testeS
