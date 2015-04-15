@@ -30,6 +30,6 @@ arc *ARC_new ( int );
 
 graph *GRAPH_end ( graph * );
 
-node *NODE_end ( node * );
+node *NODE_end ( node *, int );
 
 arc *ARC_end ( arc * );
