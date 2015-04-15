@@ -67,9 +67,22 @@ graph *GRAPH_end ( graph *grafo ) {
       fprintf ( stderr, "ERROR: null pointer to graph: GRAPH_end\n" );
    else {
       if ( grafo->array != NULL )
-         grafo->array = NODE_end ( grafo->array );
+         grafo->array = NODE_end ( grafo->array, grafo->V );
       free ( grafo )
       grafo = NULL;
    }
    return grafo;
+}
+
+node *NODE_end ( node *vetor, int tamanho ) {
+   if ( vetor == NULL )
+      fprintf ( stderr, "ERROR: null pointer to array: NODE_end\n" );
+   else {
+      for ( i = 0; i < tamanho; i++ )
+         if ( vetor[i].list != NULL )
+            vetor[i].list = ARC_end ( vetor[i].list );
+      free ( vetor );
+      vetor = NULL;
+   }
+   return vetor;
 }
