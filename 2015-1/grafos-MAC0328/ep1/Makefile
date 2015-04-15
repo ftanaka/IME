@@ -11,11 +11,14 @@ stack.o: stack.c
 graph.o: graph.c
 	$(CC) $(CFLAGS) -c $^
 
-testes:testeS
+testes: testeS testeG
 
 testeS: stack.o stackT.c
 	$(CC) $(CFLAGS) $^ -o $@
 
+testeG: graph.o graphT.c
+	$(CC) $(CFLAGS) $^ -o $@
+
 .PHONY: clear
 clear:
-	rm -rf *.o testeS*
+	rm -rf *.o teste*
